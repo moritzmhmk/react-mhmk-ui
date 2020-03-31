@@ -1,0 +1,199 @@
+.formGroup, button, .errorMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 36px;
+  flex-basis: 36px;
+  font-size: 12px;
+  padding: 6px 20px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgb(204, 204, 204);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  font-weight: 100;
+  text-align: center;
+  margin: 10px 0px;
+}
+
+.formGroup:focus-within,
+button:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.formGroup {
+  justify-content: space-between;
+  padding: 0;
+  overflow: hidden;
+}
+
+.formGroup > * {
+  min-height: 36px;
+}
+
+.formGroup > label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex: 2;
+  cursor: pointer;
+}
+.formGroup > label.checkbox {
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+.formGroup > input, .formGroup > select {
+  padding: 0px 20px;
+  height: 100%;
+  min-width: 0px;
+  flex: 3;
+  border: 0;
+  border-radius: 0;
+  outline: none;
+  background: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.formGroup > input[type="file"] {
+  opacity: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  flex: 0;
+  overflow: hidden;
+}
+.formGroup > input[type="checkbox"] {
+  flex: 1;
+  position: relative;
+  height: 32px;
+  margin-right: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+}
+.formGroup > input[type="checkbox"]::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 51px;
+  height: 32px;
+  background: #bbb;
+  border-radius: 32px;
+  border: 2px solid #aaa;
+  box-sizing: border-box;
+  transition: all 0.30s ease;
+}
+.formGroup > input[type="checkbox"]::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 21px;
+  width: 28px;
+  height: 28px;
+  border-radius: 28px;
+  box-shadow: 0 0 1px 0 rgba(0,0,0, 0.25), 0 3px 3px 0 rgba(0,0,0, 0.15);
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.275, -0.450, 0.725, 1.450);
+}
+.formGroup > input[type="checkbox"]:checked::before {
+    border: 16px solid #4cd964;
+}
+.formGroup > input[type="checkbox"]:checked::after {
+    right: 2px;
+}
+.formGroup > select {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.formGroup label > svg, button > svg {
+  width: 16px;
+  margin-right: 3px;
+}
+
+.formGroup.withOptions {
+  position: relative;
+}
+.formGroup.withOptions > input {
+  padding-right: 24px;
+}
+.formGroup.withOptions > select {
+  position: absolute;
+  right: 0px;
+  width: 24px;
+  padding: 0px;
+  text-indent: 24px;
+  color: transparent;
+}
+.formGroup.withOptions > select:focus {
+  color: initial;
+}
+.formGroup.withOptions::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  margin-top: -2px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid rgba(0,0,0,0.5);
+  pointer-events: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.errorMessage {
+  background: transparent;
+  border-color: rgb(255, 59, 48);
+  color: rgb(255, 59, 48);
+  text-align: justify;
+  justify-content: flex-start;
+  cursor: initial;
+}
+
+.errorMessage svg {
+  flex-grow: 0;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 20px;
+  width: 20px;
+  padding: 2px;
+  border: 1px solid rgb(255,59,48);
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: -10px;
+}
+.errorMessage svg path { stroke: rgb(255,59,48); }
+
+/* DARK THEME */
+@media (prefers-color-scheme: dark) {
+  .formGroup, button {
+    background: rgba(255, 255, 255, 0.2);
+    border: rgba(255, 255, 255, 0.2);
+    color: #ccc;
+  }
+
+  .formGroup:focus-within, button:focus {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .formGroup label > svg, button > svg {
+    stroke: #ccc;
+  }
+
+  .formGroup > input, .formGroup > select {
+    background-color: #222;
+    color: #ccc;
+  }
+}
