@@ -1,0 +1,20 @@
+{
+  "name": "react-mhmk-ui-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --host 0.0.0.0 --mode development"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.0.3",
+    "webpack": "^4.42.1",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-mhmk-ui": "0.0.1"
+  }
+}
