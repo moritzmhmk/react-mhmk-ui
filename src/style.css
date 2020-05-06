@@ -48,6 +48,7 @@ button:focus {
 }
 .formGroup > input, .formGroup > select {
   padding: 0px 20px;
+  margin: 0;
   height: 100%;
   min-width: 0px;
   flex: 3;
